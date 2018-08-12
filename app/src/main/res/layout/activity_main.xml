@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".MainActivity" />
+  tools:context=".MainActivity">
+
+  <com.stylingandroid.numberdetector.FingerCanvasView
+    android:id="@+id/finger_canvas"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toTopOf="@id/button_clear"
+    app:layout_constraintDimensionRatio="v,1:1"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/digit" />
+
+  <TextView
+    android:id="@+id/digit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/acme"
+    android:textSize="96sp"
+    app:layout_constraintBottom_toTopOf="@id/finger_canvas"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="8" />
+
+  <View
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:background="@drawable/outline"
+    android:layout_margin="32dp"
+    app:layout_constraintStart_toStartOf="@id/finger_canvas"
+    app:layout_constraintTop_toTopOf="@id/finger_canvas"
+    app:layout_constraintEnd_toEndOf="@id/finger_canvas"
+    app:layout_constraintBottom_toBottomOf="@id/finger_canvas" />
+
+  <Button
+    android:id="@+id/button_clear"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="@string/clear"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/finger_canvas" />
+</androidx.constraintlayout.widget.ConstraintLayout>
